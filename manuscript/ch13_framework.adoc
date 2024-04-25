@@ -1,4 +1,9 @@
-= Chapter 13: Forming a Framework
+
+=  Chapter 13: Forming a Framework
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/ch13_framework
 

@@ -1,0 +1,7 @@
+:lang: java
+:java_path: ../code/java/src/main/java
+:python_path: ../code/python
+:csharp_path: ../code/csharp/DesignPatterns
+:typescript_path: ../code/typescript
+:source-highlighter: rouge
+:already_included_config: true

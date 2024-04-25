@@ -1,4 +1,9 @@
-= Part 3: Page Based Automation Framework
+
+=  Part 3: Page Based Automation Framework
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/part3
 

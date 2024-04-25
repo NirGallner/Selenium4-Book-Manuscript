@@ -1,4 +1,9 @@
-= Chapter 16: Examining HTML Tables
+
+=  Chapter 16: Examining HTML Tables
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/ch16_table
 

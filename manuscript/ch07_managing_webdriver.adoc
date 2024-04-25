@@ -1,4 +1,9 @@
-= Chapter 7: Managing WebDriver
+
+=  Chapter 7: Managing WebDriver
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/ch07_managing_webdriver
 

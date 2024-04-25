@@ -1,4 +1,9 @@
-= Chapter 17: Automating jQuery Datepicker
+
+=  Chapter 17: Automating jQuery Datepicker
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/ch17_datepicker
 

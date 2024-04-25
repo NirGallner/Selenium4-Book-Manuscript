@@ -1,0 +1,48 @@
+include::config.adoc[]
+= Selenium 4 Book
+Nir Gallner
+:doctype: book
+:sectnums!:         // This disables section numbers globally
+:icons: font
+:source-highlighter: rouge
+:leveloffset: 1
+:toc: preamble      // Generates the TOC in the preamble of the document
+:toc-title: Table of Contents
+:toclevels: 1       // Only include top-level sections in the TOC
+:media: print
+
+
+
+
+include::../README.adoc[]
+
+include::part1.adoc[]
+include::ch01_first_steps.adoc[]
+include::ch02_locating_elements.adoc[]
+include::ch03_interacting_with_elements.adoc[]
+include::ch04_examining_a_page.adoc[]
+include::ch05_page_objects.adoc[]
+include::ch06_what_to_do.adoc[]
+
+include::part2.adoc[]
+include::ch07_managing_webdriver.adoc[]
+include::ch08_windows.adoc[]
+include::ch09_unicorns.adoc[]
+include::ch10_javascript.adoc[]
+include::ch11_drivers.adoc[]
+include::ch12_wrapping.adoc[]
+
+include::part3.adoc[]
+include::ch13_framework.adoc[]
+include::ch14_elements.adoc[]
+include::ch15_pageflow.adoc[]
+include::ch16_table.adoc[]
+include::ch17_jquerydatepicker.adoc[]
+include::ch18_datepicker.adoc[]
+
+
+include::appendices.adoc[]
+include::apA_selenium_grid.adoc[]
+
+// include::appendices.adoc[]
+// include::apA_example.adoc[]

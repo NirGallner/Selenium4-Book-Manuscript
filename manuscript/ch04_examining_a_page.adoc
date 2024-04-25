@@ -1,4 +1,9 @@
-= Chapter 4: Examining a page
+
+=  Chapter 4: Examining a page
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/ch04_examining_a_page
 

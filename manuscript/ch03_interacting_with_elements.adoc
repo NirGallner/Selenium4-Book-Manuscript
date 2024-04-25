@@ -1,4 +1,9 @@
-= Chapter 3: Interacting with elements on a page
+
+=  Chapter 3: Interacting with elements on a page
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/ch03_interacting_with_elements
 

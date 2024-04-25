@@ -1,4 +1,9 @@
-= Chapter 14: Encapsulating and Grouping elements
+
+=  Chapter 14: Encapsulating and Grouping elements
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/ch14_elements
 

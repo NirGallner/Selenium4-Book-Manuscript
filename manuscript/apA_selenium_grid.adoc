@@ -1,4 +1,9 @@
-= Appendix A: Selenium Grid
+
+=  Appendix A: Selenium Grid
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/apA_selenium_grid
 

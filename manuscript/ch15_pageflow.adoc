@@ -1,4 +1,9 @@
-= Chapter 15: Automating a page flow
+
+=  Chapter 15: Automating a page flow
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/ch15_pageflow
 

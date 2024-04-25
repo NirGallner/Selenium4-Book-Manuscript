@@ -1,4 +1,9 @@
-= Chapter 18: Datepicker Framework
+
+=  Chapter 18: Datepicker Framework
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/ch18_datepicker
 

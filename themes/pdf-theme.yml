@@ -1,0 +1,72 @@
+extends: default
+base:
+  font_family: Helvetica
+  font_size: 10
+  line_height: 1.5
+heading:
+  font_family: Helvetica
+  levels:
+    h1:
+      font_size: 24
+      font_style: bold
+      margin_bottom: 24
+    h2:
+      font_size: 18
+      font_style: bold_italic
+      margin_bottom: 18
+    h3:
+      font_size: 14
+      font_style: italic
+      margin_bottom: 14
+paragraph:
+  text_align: justify
+  margin_bottom: 10
+code:
+  font_family: Courier
+  font_color: 333333
+  background_color: F5F5F5
+  border_radius: 3
+  border_width: 0.5
+  border_color: DDDDDD
+  line_height: 1.4
+  margin_bottom: 15
+table:
+  border_style: solid
+  border_width: 1
+  border_color: EEEEEE
+  font_size: 9
+  heading:
+    font_style: bold
+    background_color: F9F9F9
+  cell:
+    padding: [5, 10, 5, 10]
+    border_width: 0.5
+    border_color: EEEEEE
+admonition:
+  label:
+    font_style: bold
+    font_size: 10
+header:
+  border_width: 0.5     # Sets the width of the border line
+  border_top_width: 1   # Specifically sets the top border line width
+  height: 1cm           # Sets the height of the header area
+  recto:
+    left:
+      content: 'From Concept to Code: Mastering Design Patterns'  # Example content: document title centered
+    right:
+      content: 'Nir Gallner, VeriSoft'  # Example content: document title centered
+  verso:
+    left:
+      content: 'From Concept to Code: Mastering Design Patterns'  # Same for verso pages
+    right:
+      content: 'Nir Gallner, VeriSoft'  # Example content: document title centered
+footer:
+  recto_content:
+    center: '{page-number}'
+  verso_content:
+    center: '{page-number}'
+cover:
+  front:
+    image: ./cover.jpg
+  back:
+    image: ./cover.jpg 

@@ -1,4 +1,9 @@
-= Chapter 8: Windows, pop-ups, and frames
+
+=  Chapter 8: Windows, pop-ups, and frames
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/ch08_windows
 

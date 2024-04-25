@@ -1,4 +1,9 @@
-= Chapter 4: Making maintainable tests using the Page Object pattern
+
+=  Chapter 4: Making maintainable tests using the Page Object pattern
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/ch05_page_objects
 

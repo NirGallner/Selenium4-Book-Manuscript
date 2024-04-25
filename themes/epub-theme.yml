@@ -1,0 +1,67 @@
+styles:
+  body:
+    font-family: Helvetica
+    font-size: 10pt
+    line-height: 1.5
+  h1:
+    font-family: Helvetica
+    font-size: 24pt
+    font-style: bold
+    margin-bottom: 24pt
+  h2:
+    font-family: Helvetica
+    font-size: 18pt
+    font-style: italic
+    margin-bottom: 18pt
+  h3:
+    font-family: Helvetica
+    font-size: 14pt
+    font-style: italic
+    margin-bottom: 14pt
+  p:
+    text-align: justify
+    margin-bottom: 10pt
+  code:
+    font-family: Courier
+    color: '#333333'
+    background-color: '#F5F5F5'
+    border-radius: 3pt
+    border-width: 0.5pt
+    border-color: '#DDDDDD'
+    line-height: 1.4
+    margin-bottom: 15pt
+  table:
+    border-style: solid
+    border-width: 1pt
+    border-color: '#EEEEEE'
+    font-size: 9pt
+  th:
+    font-style: bold
+    background-color: '#F9F9F9'
+  td:
+    padding: [5pt, 10pt]
+    border-width: 0.5pt
+    border-color: '#EEEEEE'
+  admonition:
+    label:
+      font-style: bold
+      font-size: 10pt
+  header:
+    border-width: 0.5pt
+    border-top-width: 1pt
+    height: 1cm
+    recto:
+      left:
+        content: 'From Concept to Code: Mastering Design Patterns'
+      right:
+        content: 'Nir Gallner, VeriSoft'
+    verso:
+      left:
+        content: 'From Concept to Code: Mastering Design Patterns'
+      right:
+        content: 'Nir Gallner, VeriSoft'
+  footer:
+    recto_content:
+      center: '{page-number}'
+    verso_content:
+      center: '{page-number}'

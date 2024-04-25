@@ -1,4 +1,9 @@
-= Chapter 2: Locating elements on a page
+
+=  Chapter 2: Locating elements on a page
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/ch02_locating_elements
 

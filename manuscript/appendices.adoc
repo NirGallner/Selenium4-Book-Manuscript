@@ -1,1 +1,6 @@
-= Appendices
+
+=  Appendices
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]

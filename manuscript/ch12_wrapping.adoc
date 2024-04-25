@@ -1,4 +1,9 @@
-= Chapter 12: Wrapping WebDriver and WebElement
+
+=  Chapter 12: Wrapping WebDriver and WebElement
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/ch12_wrapping
 

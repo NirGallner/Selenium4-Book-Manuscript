@@ -1,4 +1,9 @@
-= Chapter 1: First Steps
+
+=  Chapter 1: First Steps
+
+ifndef::already_included_config[]
+include::config.adoc[]
+endif::[]
 
 :imagesdir: ../images/ch01_first_steps
 
