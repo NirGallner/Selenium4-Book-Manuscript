@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: ch16
 :imagesdir: ../images/ch16_table
 
 This chapter covers
@@ -258,7 +259,9 @@ Once you create this `Person` domain class, you can use it to map each row in th
 
 We are going to add a *row mapper* as an constant of the `PersonTable` class we introduced earlier in Listing <<PersonTable>>. The responsibility of row mapper is to map each row on the table to an instance of the `Person` class. So we use the `Function` interface which takes a list of `Element`, where the first element is the first cell on that row, and second element is the second cell, and so on. And, it creates a instance of the `Person` class. We use pre-java 8 style to create an anonymous inner class of `Function`, implements its `apply` method here as a starting point. The code is a bit verbose. We will use Java 8 style later, and the code will be cleaner. So you can compare them.
 
-[[PersonTable]]
+ifdef::chapter_id[]
+[[{chapter_id}-PersonTable]]
+endif::[]
 [source,java]
 .link:https://github.com/selenium-webdriver-book/source/blob/master/src/test/java/swb/ch16table/v0_8/PersonTable.java#L28-56[PersonTable.java]
 ----

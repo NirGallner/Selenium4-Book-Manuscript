@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: ch17
 :imagesdir: ../images/ch17_datepicker
 
 This chapter covers

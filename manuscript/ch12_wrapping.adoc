@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: ch12
 :imagesdir: ../images/ch12_wrapping
 
 In this chapter

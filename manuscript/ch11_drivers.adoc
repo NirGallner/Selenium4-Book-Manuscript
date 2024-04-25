@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: ch11
 :imagesdir: ../images/ch11_drivers
 
 This chapter covers

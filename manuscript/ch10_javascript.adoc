@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: ch10
 :imagesdir: ../images/ch10_javascript
 
 This chapter covers

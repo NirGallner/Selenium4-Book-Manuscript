@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: part3
 :imagesdir: ../images/part3
 
 We are going to use the technique we learnt from previous part of the book to write a wrapper framework around WebDriver. This framework is written by experienced enterprise developers based upon lessons learned on the development of many web automation projects. It encapsulates much of the complexity of WebDriver and exposes a clean API to boost productivity and make code easy to understand.

@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: ch14
 :imagesdir: ../images/ch14_elements
 
 This chapter covers
@@ -275,7 +276,9 @@ These methods help make it easier to read or select a value from `radio` button 
 
 === Checkbox
 
-[[select-html]]
+ifdef::chapter_id[]
+[[{chapter_id}-select-html]]
+endif::[]
 image::checkbox.png[title=A Checkbox and "Inspect Element" view]
 
 Similarly, we can reduce the complexity of checking checkboxes by adding a method to the `Browser` class,
@@ -346,7 +349,9 @@ Now let us look at another common element, Select.
 
 The Selenium support library provides a `Select` class to handle drop-down operations. But while this works well with static HTML element, it assumes the `option` elements are embedded inside the `select` element as per figure <<select-html>> below.
 
-[[select-html]]
+ifdef::chapter_id[]
+[[{chapter_id}-select-html]]
+endif::[]
 image::select.png[title=A select and "Inspect Element" view]
 
 In web applications built using AJAX, the select maybe empty when clicked on, and then populated asynchronously using JavaScript. the `Select` class does not work for these cases. But, we can add a framework method to handle this scenario. Using a `WebDriverWait` we click on the select and then wait until there are options to choose from:
@@ -642,7 +647,10 @@ Next, we are going to have a look how to manage a page with a lot of elements.
 
 Please start the web application we provide with the book, and go to this url, http://localhost:8080/bookstore/cart, you will see a Shopping Cart page with following form among the other forms.
 
-[[Other_Information_Form]]
+
+ifdef::chapter_id[]
+[[{chapter_id}-Other_Information_Form]]
+endif::[]
 image::other-information.png[title=Other Information Form]
 
 As you can see from the screenshot of __Other Information Form__ illustrated in Figure <<Other_Information_Form>>, there are many fields, including input fields of "Redemption code",  "Billing email", checkboxes of "Send order messages to this address" and "would you like to rate this merchant?" and so on. If we expose all the fields as individual elements on the page object, the page object would be a very big class with many methods. And it is difficult to understand and maintain. So we introduce the next technique to ease the maintenance of page with many fields.

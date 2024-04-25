@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: ch9
 :imagesdir: ../images/ch09_unicorns
 
 This chapter covers

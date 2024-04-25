@@ -67,6 +67,6 @@ footer:
     center: '{page-number}'
 cover:
   front:
-    image: ./cover.jpg
+    image: ../cover.jpg
   back:
-    image: ./cover.jpg 
+    image:  

@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: ch7
 :imagesdir: ../images/ch07_managing_webdriver
 
 This chapter covers:

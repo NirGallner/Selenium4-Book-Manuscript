@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: ch18
 :imagesdir: ../images/ch18_datepicker
 
 This chapter covers
@@ -422,9 +423,15 @@ And have the `JQueryDayPicker` implementing this interface and change its `pickD
 public class JQueryDayPicker implements DayPicker {...}
 ----
 
-After these changes, `Datepicker` class evolves into the following form, but the body of `pick` method doesn't change from Listing [[datepicker-source]], what has changed is the types of the instance variables.
+After these changes, `Datepicker` class evolves into the following form, but the body of `pick` method doesn't change from Listing 
+ifdef::chapter_id[]
+[[{chapter_id}-datepicker-source]]
+endif::[]
+, what has changed is the types of the instance variables.
 
-[[datepicker-source]]
+ifdef::chapter_id[]
+[[{chapter_id}-datepicker-sourcePersonTable]]
+endif::[]
 [source,java]
 .link:https://github.com/selenium-webdriver-book/source/blob/master/src/test/java/swb/framework/datepicker/Datepicker.java#L15-18[Datepicker.java]
 ----

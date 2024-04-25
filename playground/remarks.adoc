@@ -1,0 +1,2 @@
+= Remarks
+asciidoctor-pdf  -a pdf-theme="../themes/pdf-theme.yml" -o selenium4.pdf book.adoc

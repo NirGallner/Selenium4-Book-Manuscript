@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: ch8
 :imagesdir: ../images/ch08_windows
 
 This chapter covers

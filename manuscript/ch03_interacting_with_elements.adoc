@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: ch3
 :imagesdir: ../images/ch03_interacting_with_elements
 
 This chapter covers
@@ -35,7 +36,9 @@ The operations could be:
 4. Enter password.
 5. Either, click the Login button, or press Return.
 
-[[login-form]]
+    ifdef::chapter_id[]
+    [[{chapter_id}-login-form]]
+    endif::[]
 image::login-form-sketch.png[title=Login Form <http://localhost:8080/login.html>]
 
 It is worthwhile noting that the user may be doing a few things that are not immediately clear. For example, when entering a password, they might check that the password’s text is obscured, or they may check that the page is secure. We will cover the verifications that a user might do in chapter 7.
@@ -165,7 +168,9 @@ To demonstrate various methods, we will:
 
 The example application contains a form for signing up to the mailing list, as you can see in figure <<sign-up-form>>.
 
-[[sign-up-form]]
+ifdef::chapter_id[]
+[[{chapter_id}-sign-up-form]]
+endif::[]
 image::sign-up-form.png[title=A mailing list sign-up form (http://localhost:8080/mailing-list.html)]
 
 You can see that you need to enter your email address, check a box to accept the terms and conditions (which you will do using the spacebar), and submit the form (by pressing Return).

@@ -5,4 +5,6 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: part1
+
 In this section we will introduce you to Selenium WebDriver. We’ll teach common techniques that are useful in writing tests, such as locating, interacting and verifying  elements. We’ll also show you how to make your code more maintainable using Page Objects and how to deal with errors* You’ll be able to write code for many common web pages by the end of it.

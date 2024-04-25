@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: ch15
 :imagesdir: ../images/ch15_pageflow
 
 This chapter covers
@@ -505,7 +506,10 @@ Of course, the other information we introduced in last chapter.
 Other Information form is used for collecting coupon code, billing email and comments, allowing buyer to check the checkboxes for "Send order messages to this address" and
 "would you like to rate this merchant", as well as click the radio button for mailing option in the following Figure.
 
-[[Other_Information_Form]]
+ifdef::chapter_id[]
+[[{chapter_id}-Other_Information_Form]]
+endif::[]
+
 image::other-information.png[title=Other Information]
 
 We use `setOtherInformation` method of `OtherInformationForm` class to set the input values of `OtherInformation` to the areas for other information as illustrated in Figure <<Other_Information_Form>>.

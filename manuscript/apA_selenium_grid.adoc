@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: apA
 :imagesdir: ../images/apA_selenium_grid
 
 This appendix covers

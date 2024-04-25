@@ -14,7 +14,7 @@ Nir Gallner
 
 
 
-include::../README.adoc[]
+include::Introduction.adoc[]
 
 include::part1.adoc[]
 include::ch01_first_steps.adoc[]

@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: ch1
 :imagesdir: ../images/ch01_first_steps
 
 This chapter covers

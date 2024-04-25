@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: ch13
 :imagesdir: ../images/ch13_framework
 
 This chapter covers

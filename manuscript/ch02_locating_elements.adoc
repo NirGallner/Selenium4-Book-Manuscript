@@ -5,6 +5,7 @@ ifndef::already_included_config[]
 include::config.adoc[]
 endif::[]
 
+:chapter_id: ch2
 :imagesdir: ../images/ch02_locating_elements
 
 This chapter covers
