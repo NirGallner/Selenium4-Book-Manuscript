@@ -1,2 +1,7 @@
 = Remarks
 asciidoctor-pdf  -a pdf-theme="../themes/pdf-theme.yml" -o selenium4.pdf book.adoc
+
+== Chapter one
+* Change Figure 2. Web driver diagram
+* Change image::safari-extensions.png[title=Safari Extensions panel]
+

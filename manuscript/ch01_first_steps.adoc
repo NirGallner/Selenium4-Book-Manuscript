@@ -14,138 +14,265 @@ This chapter covers
 * Why choose WebDriver?
 * "Hello WebDriver!"
 
-Nowadays, more and more business transactions are carried out on the Internet through web pages built by people. Some websites are simple enough that they can be set up by one or two people, but some websites are so complex that they are built by hundreds or even thousands of developers. Before each release, the site must be tested to make sure it is free of critical bugs. It is time-consuming to test the whole site manually, and as the site grows, so does the cost of testing. More than  that, as time passes, a new feature that was well-tested when it first became available may be forgotten about later--we risk of a loss of consistency and quality, and as a result bugs in what we thought were solid pieces of functionality creep in.
 
-In the textile industry, manual labor dominated the process of making clothes for a long time. When weaving machines were invented, productivity improved dramatically.
+In today's dynamic digital landscape, businesses are under immense pressure to 
+innovate rapidly and deliver software updates swiftly to meet evolving market 
+demands. Web applications, ranging from simple websites to complex platforms 
+developed by large teams, require rigorous testing before release to ensure 
+reliability and functionality. Manual testing of these extensive applications 
+is increasingly impractical, particularly as organizations strive to accelerate 
+time to market.
 
-The same thing is happening in software testing. Just as weaving machines changed the textile industry, we are now building "automatic testing machines" to replace manual testing, to improve the productivity, quality, and consistency of the software.
+Adding the ongoing AI revolution, where artificial intelligence streamlines 
+various aspects of software development, the ease and speed of crafting software 
+have increased. However, the potential for errors persists, emphasizing the 
+critical need for on-demand testing. Continuous Integration and Continuous 
+Deployment (CI/CD) pipelines enable the instant rollout of online features, 
+underscoring the importance of robust automated testing frameworks like Selenium 
+WebDriver. These frameworks ensure that software updates undergo thorough 
+testing before deployment, maintaining reliability and functionality in 
+fast-paced development environments.
 
-Since its inception in 2008, *Selenium WebDriver* (also known as Selenium 2) has established itself as the de facto web automation library.
+Selenium WebDriver stands out as the industry-standard tool for web automation, 
+empowering teams to automate testing across diverse browsers and platforms 
+efficiently. By automating repetitive testing tasks, WebDriver significantly 
+reduces the time needed for testing, enabling teams to focus more on developing 
+new features and enhancing user experience.
 
-Before Selenium WebDriver, there was Selenium 1.0, which enabled automation by injecting JavaScript into web pages. WebDriver is a re-invention of that idea, but is more reliable, more powerful, and more scalable.
+This chapter introduces Selenium WebDriver's core principles, its pivotal role 
+in accelerating software delivery, and practical strategies for integrating it 
+into agile CI/CD workflows. It highlights how WebDriver supports high-quality 
+software development amidst the complexities of today's AI-driven era and rapid 
+deployment cycles. The chapter will rapidly cover the basics, making sure that 
+by the end of it you understand the basic architecture can write basic code.
 
-Selenium has evolved, and so has the World Wide Web. *HTML5* and *CSS3* are now standard; AJAX rich web applications are no longer even cutting edge. This means that web automation is now a more complex and interesting topic.
+In this chapter we'll introduce WebDriver, what it is, how it works, and reasons 
+for choosing it. We'll also briefly talk about some of the tools we used in this 
+book, the ones we'd recommend to all developers.
 
-This chapter will rapidly cover the basics, making sure that by the end of it you understand the basic architecture can write basic code.
-
-In this chapter we'll introduce WebDriver, what it is, how it works, and reasons for choosing it. We'll also briefly talk about some of the tools we used in this book, the ones we'd recommend to all developers.
 
 == What is WebDriver?
 
-Selenium WebDriver automates web browsers. It sits in the place of the person using a web browser. Like a user, it can open a website, click links, fill in forms, and navigate around. It can also examine the page, looking at elements on it and making choices based on what is sees.
+Selenium WebDriver automates web browsers. It sits in the place of the person 
+using a web browser. Like a user, it can open a website, click links, fill in 
+forms, and navigate around. It can also examine the page, looking at elements 
+on it and making choices based on what is sees.
 
-The most common use case for WebDriver is automated testing. Until recently, to run a regression test on your website, you'd need to have a set of scripts that would have to be manually executed by developers or QAs. Any reports would need to be manually collated too. This can be both time-consuming and costly. Instead, WebDriver can be used to execute those scripts, and automatically gather reports on how successful they were, at the push of a button. Each subsequent execution will be no more expensive than the first.
+The most common use case for WebDriver is automated testing. Until recently, 
+and in many organizations till this day, in order to run a regression test on 
+your website, you'd need to have a set of scripts that would have to be manually 
+executed by developers or QAs. Any reports would need to be manually collated 
+too. This can be both time-consuming and costly. Instead, WebDriver can be used 
+to execute those scripts, and automatically gather reports on how successful 
+they were, at the push of a button. Each subsequent execution will be no more 
+expensive than the first.
 
 image::before-web-driver.png[title=Before WebDriver]
 
-Long gone are the days when you needed to create one version on your website for the pervasive and notoriously standards non-compliant Internet Explorer 6, and another for other browsers. While most modern browsers are much more consistent in their behavior, the way a web page looks or acts can still greatly vary as the number of different browsers, operating system, and platforms in common use has increased. You can still have a high-value customer complain that they can't access your site. Historically, the only way to mitigate this was to have an army of QAs manually test on a variety of different configurations, a time-consuming and costly process. WebDriver can run tests on different operating systems and different browser configurations, and in a fraction of the time of a human being. Not only that, you can use it to run them much more consistently and reliably than a manual tester.
+Long gone are the days when you needed to create one version on your website 
+for the pervasive and notoriously standards non-compliant Internet Explorer 6, 
+and another for other browsers. While most modern browsers are much more 
+consistent in their behavior, the way a web page looks or acts can still greatly 
+vary as the number of different browsers, operating system, and platforms in 
+common use has increased. You can still have a high-value customer complain that 
+they can't access your site. Historically, the only way to mitigate this was to 
+have an army of QAs manually test on a variety of different configurations, 
+a time-consuming and costly process. WebDriver can run tests on different 
+operating systems and different browser configurations, and in a fraction of 
+the time of a human being. Not only that, you can use it to run them much more 
+consistently and reliably than a manual tester.
 
-Applications and websites provide useful services, but sometimes these are only accessible by web pages. Another use case for WebDriver is to make those pages accessible to applications via WebDriver. You might have an administration application written several years ago and a client or Product Owner has asked for some actions on it to be automated. But maybe no one knows where the source code is. It might be much easier to use WebDriver to automate this task.
+Applications and websites provide useful services, but sometimes these are only 
+accessible by web pages. Another use case for WebDriver is to make those pages 
+accessible to applications via WebDriver. You might have an administration 
+application written several years ago and a client or Product Owner has asked 
+for some actions on it to be automated. But maybe no one knows where the source 
+code is. It might be much easier to use WebDriver to automate this task.
 
 == How WebDriver works
 
-WebDriver works in all major browsers and with all major programming languages. How is this possible? Well, WebDriver has several interacting components:
+WebDriver works in all major browsers and with all major programming languages. 
+How is this possible? Well, WebDriver has several interacting components:
 
-1.  A *web browser*.
-2.  A *plugin or extension* to the browser that lives inside the browser, which itself contains a server that implements the WebDriver JSON API.
-3.  A *language binding* (in our case Java) that makes HTTP requests to that API.
+1.  *Web Browser:* Each browser interacts with WebDriver through its respective 
+automation mechanisms.
+2.  *Browser Plugin or Extension:* This component resides within the browser and 
+contains a server that implements the WebDriver W3C Protocol.
+3.  *Language Bindings:* WebDriver supports multiple programming languages 
+(e.g., Java, Python, JavaScript), enabling developers to make use the W3C 
+WebDriver API in their preferred language.
 
 image::web-driver-diagram.png[title=Web driver diagram]
 
-When you start code that uses WebDriver, it will open up the browser, which in turn starts the plugin. You can then send requests to perform the actions you want, such as clicking on links or typing text. As a plugin only needs to implement the JSON API, people have written plugins for all major browsers. To use a browser that has a plugin, you just need to implement a client to the JSON protocol.
+When you initiate code that utilizes WebDriver, it launches the specified 
+browser, which then starts its respective WebDriver automation server. 
+Through WebDriver's standardized protocol, you can send commands to perform 
+actions like clicking links or entering text. Each browser vendor implements 
+their own automation server according to the W3C WebDriver Protocol, ensuring 
+compatibility and consistent behavior across different browsers.
 
-This means that all the major browsers and all the major programming languages support WebDriver.
-
-The plugin can usually be seen in the browser's preferences, such as in figure 1.3.
+This standardization means that WebDriver is supported by all major browsers 
+and can be used with various programming languages. Integration typically 
+involves implementing a client that communicates with the browser's WebDriver 
+API, ensuring seamless automation capabilities.
 
 image::safari-extensions.png[title=Safari Extensions panel]
 
 == Why choose WebDriver?
 
-There a number of great reasons to choose WebDriver:
+There are numerous automated testing tools available, but Selenium remains the 
+leading and most stable choice, with a proven track record spanning almost two 
+decades. A vast majority of resources and documentation on the internet 
+focus on Selenium, underscoring its dominance in the field.
 
-* WebDriver can run browsers *locally and remotely* with minimal configuration changes.
-* WebDriver is *supported by major browser vendors*: both Firefox and Chrome are active participants in WebDriver’s development.
-* WebDriver more closely mimics a user. Where possible it uses *native events* to operate, to make it accurate and stable.
-* WebDriver is *Open Source Software (OSS)*. This means that it is both free and is supported by an excellent community.
-* WebDriver supports all major operating systems such as *OS X*, *Windows*, and *Linux*. It also has support for *Android* and *iOS*.
-* WebDriver is going to become a *W3C* standard, so you can expect that it will be supported for a long time.
-* WebDriver doesn't suffer from some of the problems that Selenium 1.0 suffered from, such as with uploading files, or handling pop-ups.
-* WebDriver has a more *concise syntax* than Selenium 1.0, making it faster to write code.
+There are several compelling reasons to opt for Selenium WebDriver:
+
+- *Local and Remote Browser Execution:* Selenium WebDriver can seamlessly run 
+browsers both locally and remotely with minimal configuration adjustments.
+
+- *User-Centric Automation:* WebDriver closely mimics user interactions, 
+leveraging native events for precise and stable automation.
+
+- *Open Source:* As Open Source Software (OSS), Selenium WebDriver is free to 
+use and benefits from a thriving community for support and enhancement.
+
+- *Cross-Platform Compatibility:* Selenium WebDriver supports all major 
+operating systems, including OS X, Windows, and Linux, along with mobile 
+platforms like Android and iOS.
+
+- *W3C Standardization:* WebDriver is currently the only test automation tool
+which is a W3C standard, ensuring long-term support and adoption across the 
+industry.
+
+- *WebDriver BiDirectional Protocol:* Selenium is working with browser vendors 
+to create the WebDriver BiDirectional Protocol as a means to provide a stable, 
+cross-browser API that uses the bidirectional functionality useful for both 
+browser automation generally and testing specifically. Before the BiDi procotol, 
+users seeking this functionality have had to rely on CDP (Chrome DevTools 
+Protocol) which has a numerous limitations.
+
 
 == What WebDriver cannot do
 
-WebDriver provides a way to control a web browser, but that is all. When you buy a new car, you get a manual that will tell you how to operate the radio and how to change the oil. But that manual won't tell you the best place to get your car serviced, or teach you how to drive. Like driving a car, there are things you must do for yourself. Here are some things WebDriver does not do:
+WebDriver provides a way to control a web browser, but that is all. When you buy 
+a new car, you get a manual that will tell you how to operate the radio and how 
+to change the oil. But that manual won't tell you the best place to get your car 
+serviced, or teach you how to drive. Like driving a car, there are things you 
+must do for yourself. Here are some things WebDriver does not do:
 
-* WebDriver doesn’t have the control of the timing of the elements appearing on the web page. Some might appear later and you'll need to handle this yourself.
-* WebDriver does not know when things have changed on the page, so you can't ask it to tell you when things have changed.
-* WebDriver doesn't provide many utilities for writing your code. You need to write these yourself.
-* WebDriver doesn't provide built-in support for page elements that are composed of multiple elements, such as JavaScript calendars.
-* WebDriver does not provide a framework to write your code in. JUnit is a natural choice.
-* WebDriver doesn't manage the browser. For example, you need to clean up after you have used it.
-* WebDriver won't install or maintain your browsers. You need to do this yourself.
+* WebDriver doesn’t have the control of the timing of the elements appearing on 
+the web page. Some might appear later and you'll need to handle this yourself.
+* WebDriver does not know when things have changed on the page, so you can't ask 
+it to tell you when things have changed.
+* WebDriver doesn't provide many utilities for writing your code. You need to 
+write these yourself.
+* WebDriver doesn't natively support page elements composed of multiple 
+elements, like JavaScript calendars or complex objects built using frontend 
+technologies such as React or Angular. Effectively handling these complex 
+objects requires additional effort.
+* WebDriver does not provide a framework to write your code in. JUnit (5) or 
+TestNG are  natural choices.
+* WebDriver doesn't manage the browser. For example, you need to clean up after 
+you have used it.
+* WebDriver won't install or maintain your browsers. You need to do this 
+yourself.
 
 We'll cover all these important tasks in this book.
 
 == The history of Selenium
 
-Selenium is a suite of web testing tools, including *Selenium IDE*, *Selenium RC*, Selenium WebDriver, and *Selenium Grid*. The earliest Selenium is called Selenium Core, which came out of ThoughtWorks’s
-Chicago office developed by *Jason Huggins*. It was written to simulate a human user's action with Internet Explorer. It was different from Record/Replay tool types from other vendors, since it didn’t require an additional GUI tool to support its operation. It just needed Java, which most developers had already installed on their machines.
+The evolution of Selenium spans a suite of web testing tools: *Selenium IDE*, 
+*Selenium RC*, *Selenium WebDriver*, and *Selenium Grid*. Originating from 
+ThoughtWorks's Chicago office by Jason Huggins, Selenium Core was initially 
+designed to simulate human user actions with Internet Explorer. Unlike 
+traditional Record/Replay tools, Selenium Core operated solely with Java, a 
+ubiquitous language among developers.
 
-Later, *Shinya Kasatani* developed a Firefox plugin called *Selenium IDE* on top of Selenium Core. Selenium IDE is a graphic interface allowing users to record a browser navigation session, which can be replayed afterwards. Selenium IDE integrated with Firefox and provided the same Record/Replay function as the other proprietary tools. Since Selenium IDE is a free tool, it soon captured a big market share among QAs and business analysts who didn’t have the necessary programming skills to use Selenium Core. Later Selenium Core evolved into Selenium RC ("RC" meaning "Remote Control"), along with Selenium Grid, which allowed tests can be run on many machines at the same time.
+Later, *Shinya Kasatani* extended Selenium with a Firefox plugin called 
+*Selenium IDE*, introducing a graphical interface for recording browser 
+interactions, appealing to QA testers and analysts lacking programming skills. 
+*Selenium Core* transitioned into *Selenium RC* ("Remote Control") and 
+*Selenium Grid*, enabling distributed test execution across multiple machines.
 
-Selenium WebDriver was originally created by Simon Stewart at Thoughtworks. It was originally presented at Google Test Automation Conference, and this can still be seen online <https://www.youtube.com/watch?v=tGu1ud7hk5I>.
+*Selenium WebDriver*, developed by *Simon Stewart*, debuted at the 2007 Google 
+Test Automation Conference. It introduced a standardized approach via the 
+WebDriver API, consolidating the Selenium 2.0 release in 2008. WebDriver's 
+adoption soared due to its ability to interact with browsers uniformly through 
+a single API, surpassing Selenium RC's capabilities. Selenium RC was 
+subsequently deprecated in favor of WebDriver, with migration guides 
+facilitating the transition.
 
-In 2008, Selenium incorporated WebDriver API and formed Selenium 2.0. Selenium WebDriver became the most popular choice among the Selenium tool suite, since it offers standardized operation to various Browsers through a common interface, WebDriver. In favor of this new simplified WebDriver API, Selenium RC has been deprecated and its usage is no longer encouraged. The developers who maintain Selenium also provided a migration guide helping Selenium RC users migrating from Selenium RC to WebDriver.
-
-Today, when people talk about "Selenium," they're usually talking about Selenium WebDriver.
+In recent years, Selenium has continued to evolve, culminating in Selenium 4, 
+which enhances automation capabilities with advanced features and better support 
+for modern web standards. WebDriver's adherence to W3C standards ensures 
+compatibility and longevity, solidifying its position as the preferred choice for web automation.
 
 [sidebar]
 .Why it is called Selenium?
 ****
-Jason Huggins joked about a competitor named Mercury in an email, saying that you can cure mercury poisoning by taking selenium supplements. That’s where the name Selenium came from.
+Jason Huggins joked about a competitor named Mercury in an email, saying that 
+you can cure mercury poisoning by taking selenium supplements. That’s where 
+the name Selenium came from.
 ****
 
 
 == The tools you need to get started
 
-On top of a computer, access to the Internet, and a development environment, you will need some additional pieces of software to get started.
+On top of a computer, access to the Internet, and a development environment, 
+you will need some additional pieces of software to get started.
 
 [sidebar]
 .Why we use Java in this book
 ****
-While we're aware that many developers won't be using Java as their main language. We chose it as the language for this book  because we wanted to write for the most people possible, and Java is the most popular programming language.
+While we understand that many developers may not use Java as their primary 
+language, we chose it for this book to reach the widest audience possible, 
+considering Java's continued popularity as one of the top programming languages.
+One of the reasons We chose Java for this book because the original version 
+also used Java as its programming language, and we aimed to stay faithful to 
+the original while updating it.
 
-The API to WebDriver is similar in all languages. The languages of the web -- JavaScript, CSS, and HTML -- are the same regardless of the language you're writing your tests in. If you're using one of the many languages that WebDriver supports,  such as C#, Ruby or Python, you should be able to replicate many of the techniques in this book.
+The WebDriver API remains consistent across different programming languages. 
+The core languages of the web—JavaScript, CSS, and HTML—remain the same 
+regardless of the language used for writing tests. If you prefer to use one of 
+the many languages supported by WebDriver, such as C#, JavaScript, Ruby, or 
+Python, you should find that many of the techniques discussed in this book can 
+be applied effectively.
 ****
 
 === Java Development Kit (JDK)
 
-As Java is among the most popular and widely used development languages, we will be using it throughout this book. Java 8 introduces a number of features, such as streams and lambda expressions, that make it faster and more efficient to work with WebDriver.
+As Java is among the most popular and widely used development languages, we 
+will be using it throughout this book. Currently, Java 21 is the newest LTS and 
+we will use it as our JDK version.
 
-You can check to see if (and which version of) the JDK is already installed from a terminal using the `javac` command:
+You can check to see if (and which version of) the JDK is already installed 
+from a terminal using the `javac` command:
 
 [source,sh]
 ----------------
 $ javac -version
-javac 1.8.0_20
+javac 21
 ----------------
 
-Note that it is typical to refer to a Java version by the middle digit of the full version number, so "Java 1.8" is usually known as "Java 8."
-
-Linux users can install Java using the `yum` or `apt` package managers. Windows and OS X users can download it from Oracle at http://www.oracle.com/technetwork/java/javase/downloads/index.html.
+Linux users can install Java using the `yum` or `apt` package managers. Windows 
+and OS X users can download it from Oracle at http://www.oracle.com/technetwork/java/javase/downloads/index.html.
 
 === Apache Maven
 
-Throughout this book we will use the Apache Maven build tool for managing our code. The main reason for this is because Maven can manage the many dependencies that we need to create an application. You can check to see if you have Maven installed from the terminal:
+Throughout this book we will use the Apache Maven build tool for managing our 
+code. The main reason for this is because Maven can manage the many dependencies 
+that we need to create an application. You can check to see if you have Maven 
+installed from the terminal:
 
 [source,sh]
 ------------------
 $ mvn -version
-Apache Maven 3.3.1
+Apache Maven 3.9.0
 ------------------
 
-If you do not have it installed, Linux users can install it using their package manager (e.g. Apt or Yum), OS X users can install it using the Homebrew package manage (http://brew.sh)
+If you do not have it installed, Linux users can install it using their package 
+manager (e.g. Apt or Yum), OS X users can install it using the Homebrew package 
+manage (http://brew.sh)
 
 For example (on OS-X using Brew):
 
@@ -159,15 +286,20 @@ Windows users can download it from the Apache Maven website at https://maven.apa
 
 === Google Chrome
 
-Çhrome browser is the best supported browser. Unlike other browsers, it is available on every platform, it's standards compliant, and has the simple out-of-the-box integration with WebDriver.
+Chromium-based browser are the best supported browser. It is available on every 
+platform, it's standards compliant, and has the simple out-of-the-box integration 
+with WebDriver. So we will use Chrome browser in this book.
 
-As usual, Linux users can install Chrome using their package manager; otherwise you can download Chrome from Chrome.
+As usual, Linux users can install Chrome using their package manager; otherwise 
+you can download Chrome from Chrome.
 
-Later on the book we will look at other browsers such as Firefox, but having Chrome installed now will get you through the first few chapters.
+Later on the book we will look at other browsers such as Firefox or Edge, but 
+having Chrome installed now will get you through the first few chapters.
 
 === Git
 
-You'll need to install Git if you want to check out the source code for this book. On OS-X using Brew:
+You'll need to install Git if you want to check out the source code for this 
+book. On OS-X using Brew:
 
     brew install git
 
@@ -179,7 +311,9 @@ If you use Windows, you can download it from <https://git-scm.com/> .
 
 == The test project
 
-As part of this project, we have put all the source code into the Git version control system. This contains all the sample code, as well as a small website the code runs against.
+As part of this project, we have put all the source code into the Git version 
+control system. This contains all the sample code, as well as a small website 
+the code runs against.
 
 You can get this by running these commands:
 
